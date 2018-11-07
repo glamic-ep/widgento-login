@@ -46,11 +46,10 @@
         <Widgento_Login>
             <active>true</active>
             <codePool>community</codePool>
-            <self_name></self_name>
-            <priority>1001</priority>
             <depends>
                 <Mage_Customer />
                 <Mage_Adminhtml />
+                <Widgento_Core />
             </depends>
         </Widgento_Login>
     </modules>

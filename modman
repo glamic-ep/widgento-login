@@ -1,5 +1,8 @@
 app/code/community/Widgento/Login app/code/community/Widgento/Login
+app/code/community/Widgento/Core app/code/community/Widgento/Core
 app/design/adminhtml/default/default/layout/widgentologin.xml app/design/adminhtml/default/default/layout/widgentologin.xml
 app/etc/modules/Widgento_Login.xml app/etc/modules/Widgento_Login.xml
+app/etc/modules/Widgento_Core.xml app/etc/modules/Widgento_Core.xml
 app/locale/de_DE/Widgento_Login.csv app/locale/de_DE/Widgento_Login.csv
 app/locale/en_US/Widgento_Login.csv app/locale/en_US/Widgento_Login.csv
+shell/widgento_uninstall.php  shell/widgento_uninstall.php
