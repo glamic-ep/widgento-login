@@ -52,29 +52,31 @@
         </blocks>
 
         <helpers>
-            <widgentologin><class>Widgento_Login_Helper</class></widgentologin>
+            <widgentologin>
+                <class>Widgento_Login_Helper</class>
+            </widgentologin>
         </helpers>
 
-		<resources>
-			<widgento_login_setup>
-				<setup>
- 				   <module>Widgento_Login</module>
-				</setup>
-				<connection>
-				    <use>core_setup</use>
-				</connection>
-			</widgento_login_setup>
-			<widgentologin_write>
-				<connection>
-				    <use>core_write</use>
-				</connection>
-			</widgentologin_write>
-			<widgentologin_read>
-				<connection>
-				    <use>core_read</use>
-				</connection>
-			</widgentologin_read>
-		</resources>
+        <resources>
+            <widgento_login_setup>
+                <setup>
+                    <module>Widgento_Login</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </widgento_login_setup>
+            <widgentologin_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </widgentologin_write>
+            <widgentologin_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </widgentologin_read>
+        </resources>
         <events>
             <widgento_core_uninstall>
                 <observers>
@@ -89,23 +91,23 @@
 
     <admin>
         <routers>
-          <widgentologinadmin>
-              <use>admin</use>
-              <args>
-                  <module>Widgento_Login_Adminhtml</module>
-                  <frontName>widgentologinadmin</frontName>
-              </args>
-          </widgentologinadmin>
-       </routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <widgentologin before="Mage_Adminhtml">Widgento_Login_Adminhtml</widgentologin>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
     </admin>
 
     <adminhtml>
         <layout>
-             <updates>
-                  <widgentologin>
-                        <file>widgentologin.xml</file>
-                  </widgentologin>
-             </updates>
+            <updates>
+                <widgentologin>
+                    <file>widgentologin.xml</file>
+                </widgentologin>
+            </updates>
         </layout>
 
         <translate>
@@ -117,62 +119,18 @@
                 </Widgento_Login>
             </modules>
         </translate>
-
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <widgentologin>
-                                            <title>Login as Customer</title>
-                                        </widgentologin>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                        <customer>
-                            <children>
-                                <widgentologin>
-                                    <title>Login as Customer</title>
-                                    <children>
-                                        <log>
-                                            <title>Login as Customer Logs</title>
-                                        </log>
-                                    </children>
-                                </widgentologin>
-                            </children>
-                        </customer>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
-
-        <menu>
-            <customer>
-                <children>
-                    <widgentologin translate="title" module="widgentologin">
-                        <title>Login as Customer Logs</title>
-                        <action>widgentologinadmin/log/index</action>
-                        <sort_order>200</sort_order>
-                    </widgentologin>
-                </children>
-            </customer>
-        </menu>
     </adminhtml>
 
     <frontend>
         <routers>
-          <widgentologin>
-              <use>standard</use>
-              <args>
-                  <module>Widgento_Login</module>
-                  <frontName>widgentologin</frontName>
-              </args>
-          </widgentologin>
-       </routers>
+            <widgentologin>
+                <use>standard</use>
+                <args>
+                    <module>Widgento_Login</module>
+                    <frontName>widgentologin</frontName>
+                </args>
+            </widgentologin>
+        </routers>
     </frontend>
 
     <default>

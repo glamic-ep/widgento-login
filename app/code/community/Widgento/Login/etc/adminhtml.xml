@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+Separated that part from config and changed action, because we hit 404 page when we have routers defined in the following way:
+
+<admin>
+    <routers>
+      <widgentologinadmin>
+          <use>admin</use>
+          <args>
+              <module>Widgento_Login_Adminhtml</module>
+              <frontName>widgentologinadmin</frontName>
+          </args>
+      </widgentologinadmin>
+   </routers>
+</admin>
+
+-->
+<config>
+    <menu>
+        <customer>
+            <children>
+                <widgentologin translate="title" module="widgentologin">
+                    <title>Login as Customer Logs</title>
+                    <action>adminhtml/log</action>
+                    <sort_order>200</sort_order>
+                </widgentologin>
+            </children>
+        </customer>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <widgentologin>
+                                        <title>Login as Customer</title>
+                                    </widgentologin>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <customer>
+                        <children>
+                            <widgentologin>
+                                <title>Login as Customer</title>
+                                <children>
+                                    <log>
+                                        <title>Login as Customer Logs</title>
+                                    </log>
+                                </children>
+                            </widgentologin>
+                        </children>
+                    </customer>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
